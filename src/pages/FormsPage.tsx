@@ -7,14 +7,12 @@ interface PersonDefinition {
   name: string;
   email: string;
   dob: string;
-  color: string;
 }
 
 const FormsPage = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const dobRef = useRef<HTMLInputElement>(null);
-  const colorRef = useRef<HTMLInputElement>(null);
 
   const [personData, setPersonData] = useState<PersonDefinition | undefined>(
     undefined
@@ -24,10 +22,9 @@ const FormsPage = () => {
     const name = nameRef.current?.value;
     const email = emailRef.current?.value;
     const dob = dobRef.current?.value;
-    const color = colorRef.current?.value;
 
-    if (name && email && dob && color) {
-      setPersonData({ name, email, dob, color });
+    if (name && email && dob) {
+      setPersonData({ name, email, dob });
     }
 
     console.log("Form submitted!");
@@ -60,10 +57,7 @@ const FormsPage = () => {
             <Label>Date of Birth</Label>
             <Input type="date" ref={dobRef} />
           </div>
-          <div className="space-y-1">
-            <Label>Favourite Color</Label>
-            <Input type="color" ref={colorRef} />
-          </div>
+
           <Button variant="secondary" className="mt-4">
             Save Data
           </Button>
@@ -76,7 +70,6 @@ const FormsPage = () => {
             <p>Name: {personData.name}</p>
             <p>Email: {personData.email}</p>
             <p>Date of Birth: {personData.dob}</p>
-            <p>Favourite Color: {personData.color}</p>
           </div>
         ) : (
           <div className="bg-red-200 text-red-700 px-4 py-2 rounded-2xl border border-red-700">
