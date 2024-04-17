@@ -7,14 +7,12 @@ interface PersonDefinition {
   name: string;
   email: string;
   dob: string;
-  color: string;
 }
 
 const FormsPage = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const dobRef = useRef<HTMLInputElement>(null);
-  const colorRef = useRef<HTMLInputElement>(null);
 
   const [personData, setPersonData] = useState<PersonDefinition | undefined>(
     undefined
@@ -24,10 +22,9 @@ const FormsPage = () => {
     const name = nameRef.current?.value;
     const email = emailRef.current?.value;
     const dob = dobRef.current?.value;
-    const color = colorRef.current?.value;
 
-    if (name && email && dob && color) {
-      setPersonData({ name, email, dob, color });
+    if (name && email && dob) {
+      setPersonData({ name, email, dob });
     }
 
     console.log("Form submitted!");
@@ -46,7 +43,12 @@ const FormsPage = () => {
         >
           <div className="space-y-1">
             <Label>Full Name</Label>
-            <Input placeholder="John Doe" type="text" ref={nameRef} />
+            <Input
+              placeholder="John Doe"
+              type="text"
+              ref={nameRef}
+              data-cy="name-input"
+            />
           </div>
           <div className="space-y-1">
             <Label>Email</Label>
@@ -54,29 +56,28 @@ const FormsPage = () => {
               type="email"
               placeholder="johndoe@gmail.com"
               ref={emailRef}
+              data-cy="email-input"
             />
           </div>
           <div className="space-y-1">
             <Label>Date of Birth</Label>
-            <Input type="date" ref={dobRef} />
+            <Input type="date" ref={dobRef} data-cy="date-input" />
           </div>
-          <div className="space-y-1">
-            <Label>Favourite Color</Label>
-            <Input type="color" ref={colorRef} />
-          </div>
-          <Button variant="secondary" className="mt-4">
+          <Button variant="secondary" className="mt-4" data-cy="send-button">
             Save Data
           </Button>
         </form>
       </div>
-      <div className="w-full mx-auto bg-black px-6 py-4 rounded-lg">
+      <div
+        className="w-full mx-auto bg-black px-6 py-4 rounded-lg"
+        data-cy="response"
+      >
         <h1 className="text-2xl mb-4">Employee Data</h1>
         {personData ? (
           <div className="bg-green-200 text-green-700 px-4 py-2 rounded-2xl border border-green-700">
             <p>Name: {personData.name}</p>
             <p>Email: {personData.email}</p>
             <p>Date of Birth: {personData.dob}</p>
-            <p>Favourite Color: {personData.color}</p>
           </div>
         ) : (
           <div className="bg-red-200 text-red-700 px-4 py-2 rounded-2xl border border-red-700">
