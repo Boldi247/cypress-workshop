@@ -1,11 +1,12 @@
 import SectionContainer from "@/components/SectionContainer";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const AdvancedInputTypes = () => {
   const [checkBox, setCheckBox] = useState<boolean>(false);
   const [dropdown, setDropdown] = useState<string>("Volvo");
+  const [slider, setSlider] = useState<number>(50);
 
   const checkBoxLabelColor = checkBox ? "text-red-500" : "text-white";
 
@@ -47,8 +48,15 @@ const AdvancedInputTypes = () => {
           )}
         </p>
       </div>
-      <div>
-        <p>asd</p>
+      <div className="mt-2 flex items-center gap-4">
+        <input
+          type="range"
+          min={1}
+          max={100}
+          value={slider}
+          onChange={(e) => setSlider(Number(e.target.value))}
+        />
+        <span className="text-white">{slider}</span>
       </div>
     </SectionContainer>
   );
