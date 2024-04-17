@@ -76,9 +76,6 @@ const Home = () => {
             <NavigationButton url="/advanced-input-types">
               Checkboxes, dropdowns
             </NavigationButton>
-            <NavigationButton url="">
-              Testing navigation and URL changes
-            </NavigationButton>
             <NavigationButton url="/localstorage">
               Local Storage and Session Storage testing
             </NavigationButton>
