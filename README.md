@@ -2,8 +2,8 @@
 
 In this project, I'd like to showcase the basic usage of Cypress as an E2E testing framework.
 
-[!NOTE]
-The project has two branches:
+> [!NOTE]  
+> The project has two branches:
 
 - main
 - cypress
