@@ -32,7 +32,7 @@ const LocalStoragePage = () => {
       <SectionContainer>
         <h1 className="text-2xl mb-4">Localstorage, sessionstorage testing</h1>
         <Label>Save text to localstorage and sessionstorage</Label>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2" data-cy="localstorage-control">
           <Input type="text" className="w-fit" ref={inputRef} />
           <Button
             variant="secondary"
