@@ -14,7 +14,10 @@ const Home = () => {
   return (
     <>
       <div className="max-w-[800px] pt-8 space-y-4 mx-auto">
-        <div className="w-full mx-auto text-center bg-black px-6 py-4 rounded-lg">
+        <div
+          className="w-full mx-auto text-center bg-black px-6 py-4 rounded-lg"
+          data-cy="introduction"
+        >
           <h1 className="text-3xl flex items-center gap-3 justify-center mb-4">
             <span className="flex items-center gap-1 font-bold">
               Cypress <TbBrandCypress className="text-green-700" />
@@ -66,7 +69,7 @@ const Home = () => {
           <h1 className="text-2xl mb-4 flex items-center gap-2">
             Learning Path <FaBook />
           </h1>
-          <div className="space-y-2">
+          <div className="space-y-2" data-cy="learning-paths">
             <NavigationButton url="/locators">
               What are locators, especially data-cy attributes?
             </NavigationButton>

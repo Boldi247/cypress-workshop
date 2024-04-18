@@ -19,7 +19,7 @@ const LocatorsPage = () => {
       <Toaster />
       <SectionContainer>
         <h1 className="text-2xl text-center flex gap-2 items-center justify-center mb-4 capitalize">
-          What are locators? <FaLocationCrosshairs />
+          What Are Locators? <FaLocationCrosshairs />
         </h1>
         <p>
           Cypress locators are used to find WebElements in the HTML Document

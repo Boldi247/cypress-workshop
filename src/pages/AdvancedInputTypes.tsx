@@ -39,7 +39,7 @@ const AdvancedInputTypes = () => {
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
         </select>
-        <p>
+        <p data-cy="brand">
           Selected brand:{" "}
           {dropdown ? (
             <span className="text-green-200">{dropdown}</span>
