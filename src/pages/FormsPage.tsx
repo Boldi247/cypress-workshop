@@ -43,7 +43,12 @@ const FormsPage = () => {
         >
           <div className="space-y-1">
             <Label>Full Name</Label>
-            <Input placeholder="John Doe" type="text" ref={nameRef} />
+            <Input
+              placeholder="John Doe"
+              type="text"
+              ref={nameRef}
+              data-cy="name-input"
+            />
           </div>
           <div className="space-y-1">
             <Label>Email</Label>
@@ -51,19 +56,23 @@ const FormsPage = () => {
               type="email"
               placeholder="johndoe@gmail.com"
               ref={emailRef}
+              data-cy="email-input"
             />
           </div>
           <div className="space-y-1">
             <Label>Date of Birth</Label>
-            <Input type="date" ref={dobRef} />
+            <Input type="date" ref={dobRef} data-cy="birth-input" />
           </div>
 
-          <Button variant="secondary" className="mt-4">
+          <Button variant="secondary" className="mt-4" data-cy="send-button">
             Save Data
           </Button>
         </form>
       </div>
-      <div className="w-full mx-auto bg-black px-6 py-4 rounded-lg">
+      <div
+        className="w-full mx-auto bg-black px-6 py-4 rounded-lg"
+        data-cy="response"
+      >
         <h1 className="text-2xl mb-4">Employee Data</h1>
         {personData ? (
           <div className="bg-green-200 text-green-700 px-4 py-2 rounded-2xl border border-green-700">
