@@ -19,8 +19,11 @@ const AdvancedInputTypes = () => {
       </div>
       <p>Let's locate these elements and interact with them using Cypress.</p>
       <div className="flex items-center gap-2">
-        <span className={checkBoxLabelColor}>Red text</span>
+        <span className={checkBoxLabelColor} data-cy="red-text">
+          Red text
+        </span>
         <Input
+          data-cy="cy-checkbox"
           type="checkbox"
           className="w-fit"
           onChange={(e) => setCheckBox(e.target.checked)}
@@ -32,6 +35,7 @@ const AdvancedInputTypes = () => {
           id="cars"
           className="text-black px-2 py-1 rounded-lg border-2 border-green-700"
           onChange={(e) => setDropdown(e.target.value)}
+          data-cy="cy-select"
         >
           <option value="Volvo">Volvo</option>
           <option value="Hyundai">Hyundai</option>
@@ -42,9 +46,13 @@ const AdvancedInputTypes = () => {
         <p>
           Selected brand:{" "}
           {dropdown ? (
-            <span className="text-green-200">{dropdown}</span>
+            <span className="text-green-200" data-cy="cy-brand">
+              {dropdown}
+            </span>
           ) : (
-            <span className="text-red-200">None</span>
+            <span className="text-red-200" data-cy="cy-brand">
+              None
+            </span>
           )}
         </p>
       </div>
